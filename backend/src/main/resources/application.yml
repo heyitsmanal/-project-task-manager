@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ptm
+    username: ptm_user
+    password: ptm_pass
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+jwt:
+  secret: "THIS_IS_A_DEMO_SECRET_KEY_32_CHARS_MINIMUM!!"
+  expirationMillis: 86400000
+

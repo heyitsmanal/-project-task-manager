@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ptm_db
+    environment:
+      POSTGRES_DB: ptm
+      POSTGRES_USER: ptm_user
+      POSTGRES_PASSWORD: ptm_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - ptm_pg:/var/lib/postgresql/data
+
+volumes:
+  ptm_pg:

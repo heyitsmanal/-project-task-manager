@@ -1,0 +1,17 @@
+package ma.emsi.ptm.task;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface TaskRepository extends JpaRepository<Task, Long> {
+
+    List<Task> findByProjectId(Long projectId);
+
+    Optional<Task> findByIdAndProjectId(Long id, Long projectId);
+
+    long countByProjectId(Long projectId);
+
+    long countByProjectIdAndCompletedTrue(Long projectId);
+}
