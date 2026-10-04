@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/ptm
-    username: ptm_user
-    password: ptm_pass
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/ptm}
+    username: ${DB_USER:ptm_user}
+    password: ${DB_PASSWORD:ptm_pass}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -14,6 +14,5 @@ spring:
     enabled: true
 
 jwt:
-  secret: "THIS_IS_A_DEMO_SECRET_KEY_32_CHARS_MINIMUM!!"
-  expirationMillis: 86400000
-
+  secret: ${JWT_SECRET}
+  expirationMillis: ${JWT_EXPIRATION_MILLIS:86400000}
